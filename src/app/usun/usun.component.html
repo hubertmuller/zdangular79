@@ -1,1 +1,11 @@
-<p>usun works!</p>
+<h1 *ngIf="usuniety === 0">
+  Operacja usuwania w toku...
+</h1>
+
+<h1 *ngIf="usuniety === 1">
+  Operacja usuwania id={{id}} powiodła się.
+</h1>
+
+<h1 *ngIf="usuniety === 2">
+  Nie udało się usuną wiersza o id={{id}}
+</h1>

@@ -9,6 +9,7 @@ import {ListaService} from '../lista.service';
 })
 export class UsunComponent implements OnInit {
   public id: number;
+  public usuniety = 0;
 
   constructor(private route: ActivatedRoute, private listaService: ListaService) {
     this.route.params.subscribe(
@@ -17,9 +18,11 @@ export class UsunComponent implements OnInit {
         this.listaService.usunElement(this.id).subscribe(
           () => {
             console.log('usunieto id = ' + this.id);
+            this.usuniety = 1;
           },
           error => {
             console.log('blad przy usuwaniu id = ' + this.id);
+            this.usuniety = 2;
           }
         );
 

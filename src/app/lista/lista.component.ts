@@ -1,5 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Pipe} from '@angular/core';
 import {ListaService, Szczepionka} from '../lista.service';
+
+@Pipe({
+  name: 'przeliczwalute'
+})
+export class PrzeliczPipe {
+  transform( ilosc: number): number {
+  /* Rzeczywisty kurs moze
+  zostac pobrany przez wywolanie serwisu
+  */
+    return ilosc * 3.8;
+  }
+}
 
 @Component({
   selector: 'app-lista',
@@ -15,6 +27,10 @@ export class ListaComponent implements OnInit {
         this.szczepionki = szczepionki;
       }
     );
+  }
+
+  public przelicz (a: number): number {
+    return a * 3.8;
   }
 
   ngOnInit(): void {

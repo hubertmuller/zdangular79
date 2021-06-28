@@ -4,14 +4,18 @@
     <th>Nazwa szczepionki</th>
     <th>Cena</th>
     <th>Waluta</th>
+    <th>Cena w PLN</th>
     <th>Kraj pochodzenia</th>
+    <th>Operacje</th>
   </tr>
 
   <tr *ngFor="let szczepionka of szczepionki">
     <td>{{szczepionka.nazwa}}</td>
     <td>{{szczepionka.cena}}</td>
     <td>{{szczepionka.waluta}}</td>
+    <td>{{szczepionka.cena | przeliczwalute}}</td>
     <td>{{szczepionka.kraj}}</td>
+    <td><a [routerLink]="['/','edytuj']">Edytuj</a><a [routerLink]="['/','usun']">Usuń</a></td>
   </tr>
 
 </table>

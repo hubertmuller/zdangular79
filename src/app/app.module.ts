@@ -4,14 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DodajComponent } from './dodaj/dodaj.component';
-import { ListaComponent } from './lista/lista.component';
+import {ListaComponent, PrzeliczPipe} from './lista/lista.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UsunComponent } from './usun/usun.component';
+import { EdytujComponent } from './edytuj/edytuj.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DodajComponent,
-    ListaComponent
+    ListaComponent,
+    PrzeliczPipe,
+    UsunComponent,
+    EdytujComponent
   ],
   imports: [
     BrowserModule,

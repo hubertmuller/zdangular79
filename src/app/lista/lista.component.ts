@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ListaService, Szczepionka} from '../lista.service';
 
 @Component({
   selector: 'app-lista',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista.component.scss']
 })
 export class ListaComponent implements OnInit {
+  public szczepionki: Szczepionka[];
 
-  constructor() { }
+  constructor(private listaService: ListaService) {
+    listaService.pobierzListe().subscribe(
+      (szczepionki: Szczepionka[]) => {
+        this.szczepionki = szczepionki;
+      }
+    );
+  }
 
   ngOnInit(): void {
   }

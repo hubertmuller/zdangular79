@@ -2,14 +2,16 @@
   <caption>Lista dostępnych szczepionek</caption>
   <tr>
     <th>Nazwa szczepionki</th>
-    <th>Producent</th>
+    <th>Cena</th>
+    <th>Waluta</th>
     <th>Kraj pochodzenia</th>
   </tr>
 
-  <tr>
-    <td>Moderna One</td>
-    <td>Moderna</td>
-    <td>Niemcy</td>
+  <tr *ngFor="let szczepionka of szczepionki">
+    <td>{{szczepionka.nazwa}}</td>
+    <td>{{szczepionka.cena}}</td>
+    <td>{{szczepionka.waluta}}</td>
+    <td>{{szczepionka.kraj}}</td>
   </tr>
 
 </table>

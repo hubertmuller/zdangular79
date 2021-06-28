@@ -2,6 +2,7 @@ const http = require('http');
 
 const server = http.createServer( (req, res) => {
 
+  console.log("metoda:" + req.method);
   res.setHeader('Content-type', 'application/json');
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', '*');
@@ -9,7 +10,6 @@ const server = http.createServer( (req, res) => {
 
     if (req.method === 'GET' && req.url === '/api/lista') {
         res.statusCode = 200;
-
         res.end(`[
   {
     "nazwa": "Moderna",
@@ -39,7 +39,7 @@ const server = http.createServer( (req, res) => {
     "nazwa": "Novavax",
     "kraj": "USA",
     "cena": 15,
-    "waluta": "USD"
+    "waluta": "USDDD"
   },
   {
     "nazwa": "Novavax",

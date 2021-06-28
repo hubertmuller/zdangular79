@@ -1,3 +1,29 @@
-<p>
-  To jest second component
-</p>
+<h3>
+  Dodawanie szczepionki
+</h3>
+
+{{forma.value | json }}
+
+wartosc = {{forma.controls.cena.value}}
+
+poprawna = {{forma.valid }}
+
+errors = {{forma.controls.cena.errors | json}}
+
+<form [formGroup]="forma">
+  <input type="text" formControlName="nazwa">
+  <input type="text" formControlName="cena">
+  <select formControlName="waluta">
+    <option [ngValue]="'USD'">USD</option>
+    <option [ngValue]="'EUR'">EUR</option>
+    <option [ngValue]="'PLN'">PLN</option>
+    <option [ngValue]="'CHF'">CHF</option>
+  </select>
+  <select formControlName="kraj">
+    <option [ngValue]="'us'">USA</option>
+    <option [ngValue]="'de'">Niemcy</option>
+    <option [ngValue]="'pl'">Polska</option>
+  </select>
+</form>
+
+

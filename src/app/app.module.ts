@@ -8,6 +8,7 @@ import {ListaComponent, PrzeliczPipe} from './lista/lista.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsunComponent } from './usun/usun.component';
 import { EdytujComponent } from './edytuj/edytuj.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EdytujComponent } from './edytuj/edytuj.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

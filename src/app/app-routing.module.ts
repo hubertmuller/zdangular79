@@ -8,8 +8,8 @@ import {UsunComponent} from './usun/usun.component';
 const routes: Routes = [
   { path: 'lista', component: ListaComponent},
   { path: 'dodaj', component: DodajComponent},
-  { path: 'edytuj', component: EdytujComponent},
-  { path: 'usun', component: UsunComponent}
+  { path: 'edytuj/:id', component: EdytujComponent},
+  { path: 'usun/:id', component: UsunComponent}
 ];
 
 @NgModule({

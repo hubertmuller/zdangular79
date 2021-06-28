@@ -1,6 +1,7 @@
 <table border="1">
   <caption>Lista dostępnych szczepionek</caption>
   <tr>
+    <th>id</th>
     <th>Nazwa szczepionki</th>
     <th>Cena</th>
     <th>Waluta</th>
@@ -10,12 +11,13 @@
   </tr>
 
   <tr *ngFor="let szczepionka of szczepionki">
+    <td>{{szczepionka.id}}</td>
     <td>{{szczepionka.nazwa}}</td>
     <td>{{szczepionka.cena}}</td>
     <td>{{szczepionka.waluta}}</td>
     <td>{{szczepionka.cena | przeliczwalute}}</td>
     <td>{{szczepionka.kraj}}</td>
-    <td><a [routerLink]="['/','edytuj']">Edytuj</a><a [routerLink]="['/','usun']">Usuń</a></td>
+    <td><a [routerLink]="['/','edytuj']">Edytuj</a><a [routerLink]="['/','usun', szczepionka.id]">Usuń</a></td>
   </tr>
 
 </table>

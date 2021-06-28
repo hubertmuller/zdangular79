@@ -11,79 +11,31 @@ const server = http.createServer( (req, res) => {
     if (req.method === 'GET' && req.url === '/api/lista') {
         res.statusCode = 200;
         res.end(`[
-  {
-    "nazwa": "Moderna",
-    "kraj": "USA",
-    "cena": 20,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Pfizer",
-    "kraj": "USA",
-    "cena": 10,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USDDD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USD"
-  },
-  {
-    "nazwa": "Novavax",
-    "kraj": "USA",
-    "cena": 15,
-    "waluta": "USD"
-  }
-]`);
+          {
+            "id": 91,
+            "nazwa": "Moderna",
+            "kraj": "USA",
+            "cena": 20,
+            "waluta": "USD"
+          },
+          {
+            "id": 52,
+            "nazwa": "Pfizer",
+            "kraj": "USA",
+            "cena": 10,
+            "waluta": "USD"
+          },
+          {
+            "id": 13,
+            "nazwa": "Novavax",
+            "kraj": "USA",
+            "cena": 15,
+            "waluta": "USD"
+          }
+      ]`);
+    } else if (req.method === 'DELETE' && req.url.startsWith('/api/osoba/')) {
+      res.statusCode = 200;
+      res.end();
     } else {
       res.end();
     }

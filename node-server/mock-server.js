@@ -33,7 +33,19 @@ const server = http.createServer( (req, res) => {
             "waluta": "USD"
           }
       ]`);
-    } else if (req.method === 'DELETE' && req.url.startsWith('/api/osoba/')) {
+    } else if (req.method === 'GET' && req.url.startsWith('/api/szczczepionka/')) {
+      res.statusCode = 200;
+      res.end(`{
+            "id": 13,
+            "nazwa": "Novavax",
+            "kraj": "USA",
+            "cena": 15,
+            "waluta": "USD"
+          }`);
+    } else if (req.method === 'DELETE' && req.url.startsWith('/api/szczepionka/')) {
+      res.statusCode = 200;
+      res.end();
+    } else if (req.method === 'POST' && req.url.startsWith('/api/szczepionka')) {
       res.statusCode = 200;
       res.end();
     } else {

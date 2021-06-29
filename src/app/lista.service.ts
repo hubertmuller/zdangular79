@@ -27,10 +27,15 @@ export class ListaService {
   }
 
   usunElement(id: number): Observable<any> {
-    return this.http.delete('http://localhost:3200/api/osoba/' + id.toString(10), { headers: this.headers});
+    return this.http.delete('http://localhost:3200/api/szczepionka/' + id.toString(10), { headers: this.headers});
   }
 
   dodajElement(szczepionka: Szczepionka): Observable<any> {
-    return this.http.post('http://localhost:3200/api/osoba', szczepionka, { headers: this.headers});
+    return this.http.post('http://localhost:3200/api/szczepionka', szczepionka, { headers: this.headers});
+  }
+
+  pobierzElement(id: number): Observable<Szczepionka> {
+    console.log('wywolano pobierzElement');
+    return this.http.get<Szczepionka>('http://localhost:3200/api/szczepionka/' + id.toString(10), { headers: this.headers});
   }
 }

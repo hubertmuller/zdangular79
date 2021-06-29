@@ -28,15 +28,15 @@ class NaszWalidator {
 export class DodajComponent {
 
   public forma: FormGroup = new FormGroup( {
-      nazwa: new FormControl('test',
+      nazwa: new FormControl('',
       {validators: [, Validators.minLength(2), Validators.maxLength(50), Validators.required], updateOn: 'blur'}),
-      cena: new FormControl(2,
+      cena: new FormControl('',
         {validators: [Validators.min(1), Validators.max(100), Validators.required], updateOn: 'change'}),
-      waluta: new FormControl('USD',
+      waluta: new FormControl(null,
 {validators: [Validators.required], updateOn: 'change'}),
       kraj: new FormControl(null,
         {validators: [Validators.required], updateOn: 'change'}),
-      rok: new FormControl(12,
+      rok: new FormControl('',
         {validators: [NaszWalidator.wymaganyWiek(0, 30)], updateOn: 'change'}),
     }
     );

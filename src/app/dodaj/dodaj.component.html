@@ -1,7 +1,7 @@
 <h3>
   Dodawanie szczepionki
 </h3>
-
+<!--
 <div>
   <div>
     Wartosci formy
@@ -26,9 +26,9 @@
   </div>
 
 </div>
+-->
 
-
-<form [formGroup]="forma">
+<form [formGroup]="forma" *ngIf="!zapisano">
   <label for="nazwaId">Nazwa</label>
   <input type="text" formControlName="nazwa" id="nazwaId">
   <div class="error" *ngIf="forma.controls.nazwa.errors">
@@ -84,4 +84,6 @@
   </div>
 </form>
 
-
+<h1 *ngIf="zapisano">
+  Dziękujemy za dodanie
+</h1>

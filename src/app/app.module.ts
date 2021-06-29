@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsunComponent } from './usun/usun.component';
 import { EdytujComponent } from './edytuj/edytuj.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BladComponent } from './blad/blad.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListaComponent,
     PrzeliczPipe,
     UsunComponent,
-    EdytujComponent
+    EdytujComponent,
+    BladComponent
   ],
   imports: [
     BrowserModule,

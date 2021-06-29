@@ -17,7 +17,7 @@
     <td>{{szczepionka.waluta}}</td>
     <td>{{szczepionka.cena | przeliczwalute}}</td>
     <td>{{szczepionka.kraj}}</td>
-    <td><a [routerLink]="['/','edytuj']">Edytuj</a><a [routerLink]="['/','usun', szczepionka.id]">Usuń</a></td>
+    <td><a [routerLink]="['/','edytuj', szczepionka.id]">Edytuj</a><a [routerLink]="['/','usun', szczepionka.id]">Usuń</a></td>
   </tr>
 
 </table>

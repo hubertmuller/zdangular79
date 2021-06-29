@@ -41,6 +41,8 @@ export class DodajComponent {
     }
     );
 
+  public zapisano = false;
+
   constructor(private listaService: ListaService) {
 
   }
@@ -59,6 +61,7 @@ export class DodajComponent {
       this.listaService.dodajElement(szczepionka).subscribe(
         () => {
           console.log('Zapisano osobe');
+          this.zapisano = true;
         }
       );
     }

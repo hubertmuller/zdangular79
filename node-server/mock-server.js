@@ -33,12 +33,12 @@ const server = http.createServer( (req, res) => {
             "waluta": "USD"
           }
       ]`);
-    } else if (req.method === 'GET' && req.url.startsWith('/api/szczczepionka/')) {
+    } else if (req.method === 'GET' && req.url.startsWith('/api/szczepionka/')) {
       res.statusCode = 200;
       res.end(`{
             "id": 13,
             "nazwa": "Novavax",
-            "kraj": "USA",
+            "kraj": "us",
             "cena": 15,
             "waluta": "USD"
           }`);

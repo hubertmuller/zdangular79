@@ -1,5 +1,7 @@
 <h3>
-  Dodawanie szczepionki
+  <span *ngIf="editmode">Edycja</span>
+  <span *ngIf="!editmode">Dodawanie nowej</span>
+  szczepionki
 </h3>
 <!--
 <div>
@@ -53,11 +55,10 @@
 
   <label for="cenaId">Cena</label>
   <input type="text" formControlName="cena" id="cenaId">
+  <div class="error" *ngIf="forma.controls.cena.errors">
+    Nieprawidłowa cena
+  </div>
 
-  <label for="rokId">Rok produkcji</label>
-  <input type="text" formControlName="rok" id="rokId">
-
-  <div class="error" *ngIf="forma.controls.rok.errors">{{forma.controls.rok.errors.niepoprawnywiek}}</div>
 
 
   <label for="walutaId">Waluta</label>

@@ -2,28 +2,86 @@
   Dodawanie szczepionki
 </h3>
 
-{{forma.value | json }}
+<div>
+  <div>
+    Wartosci formy
+    <pre>
+    {{forma.value | json }}
+    </pre>
+  </div>
 
-wartosc = {{forma.controls.cena.value}}
+  <div>
+    Bledy formy
+    <pre>
+    {{forma.controls.rok.errors | json}}
+    </pre>
+  </div>
 
-poprawna = {{forma.valid }}
+  <div>
+    Inne
+    <pre>
+    wartosc = {{forma.controls.rok.value}}
+    poprawna = {{forma.valid }}
+    </pre>
+  </div>
 
-errors = {{forma.controls.cena.errors | json}}
+</div>
+
 
 <form [formGroup]="forma">
-  <input type="text" formControlName="nazwa">
-  <input type="text" formControlName="cena">
-  <select formControlName="waluta">
+  <label for="nazwaId">Nazwa</label>
+  <input type="text" formControlName="nazwa" id="nazwaId">
+  <div class="error" *ngIf="forma.controls.nazwa.errors">
+    Podaj prawidłową nazwe.
+    <span *ngIf="forma.controls.nazwa.errors.minlength">
+      Podana nazwa ma
+      {{forma.controls.nazwa.errors.minlength.actualLength}}
+      znaków a minimalnie musi mieć
+      {{forma.controls.nazwa.errors.minlength.requiredLength}}
+    </span>
+    <span *ngIf="forma.controls.nazwa.errors.maxlength">
+      Podana nazwa ma
+      {{forma.controls.nazwa.errors.maxlength.actualLength}}
+      znaków a maksymalnie moze mieć
+      {{forma.controls.nazwa.errors.maxlength.requiredLength}}
+    </span>
+    <span *ngIf="forma.controls.nazwa.errors.required">
+      Nazwa nie może być pusta
+    </span>
+  </div>
+
+
+  <label for="cenaId">Cena</label>
+  <input type="text" formControlName="cena" id="cenaId">
+
+  <label for="rokId">Rok produkcji</label>
+  <input type="text" formControlName="rok" id="rokId">
+
+  <div class="error" *ngIf="forma.controls.rok.errors">{{forma.controls.rok.errors.niepoprawnywiek}}</div>
+
+
+  <label for="walutaId">Waluta</label>
+  <select formControlName="waluta" id="walutaId">
+    <option [ngValue]="null" disabled="disabled">Wybierz walute</option>
     <option [ngValue]="'USD'">USD</option>
     <option [ngValue]="'EUR'">EUR</option>
     <option [ngValue]="'PLN'">PLN</option>
     <option [ngValue]="'CHF'">CHF</option>
   </select>
-  <select formControlName="kraj">
+  <div class="error" *ngIf="forma.controls.waluta.errors">Należy wybrać walute</div>
+
+  <label for="krajId">Kraj</label>
+  <select formControlName="kraj" id="krajId">
+    <option [ngValue]="null" disabled="disabled">Wybierz kraj</option>
     <option [ngValue]="'us'">USA</option>
     <option [ngValue]="'de'">Niemcy</option>
     <option [ngValue]="'pl'">Polska</option>
   </select>
+  <div class="error" *ngIf="forma.controls.kraj.errors">Należy wybrać kraj</div>
+
+  <div *ngIf="forma.valid">
+    <input type="submit" value="Wyślij" (click)="zapisz()">
+  </div>
 </form>
 
 

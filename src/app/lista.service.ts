@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 export interface Szczepionka {
-  id: number;
+  id?: number;
   nazwa: string;
   kraj: string;
   cena: number;
@@ -28,5 +28,9 @@ export class ListaService {
 
   usunElement(id: number): Observable<any> {
     return this.http.delete('http://localhost:3200/api/osoba/' + id.toString(10), { headers: this.headers});
+  }
+
+  dodajElement(szczepionka: Szczepionka): Observable<any> {
+    return this.http.post('http://localhost:3200/api/osoba', szczepionka, { headers: this.headers});
   }
 }
